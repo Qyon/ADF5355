@@ -1,10 +1,12 @@
 # coding=utf-8
-from math import ceil
-
-import time
-
 __author__ = 'Qyon'
+"""
+SRC: https://github.com/analogdevicesinc/linux/blob/xcomm_zynq/drivers/iio/frequency/adf5355.c
+Licensed under the GPL-2.
+"""
 
+from math import ceil
+import time
 from regs import *
 from fractions import gcd
 
@@ -244,7 +246,7 @@ class adf5355(object):
             self.spi_write(self.st.regs[ADF5355_REG1] | ADF5355_REG1)
             self.spi_write(self.st.regs[ADF5355_REG0] & ~ADF5355_REG0_AUTOCAL(1))
             self.spi_write(self.st.regs[ADF5355_REG4] | ADF5355_REG4)
-            time.sleep(0.1)
+            time.sleep(self.st.delay_us / 1000000)
             self.spi_write(self.st.regs[ADF5355_REG0])
 
     def disable(self):

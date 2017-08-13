@@ -1,7 +1,8 @@
 # coding=utf-8
 __author__ = 'Qyon'
 """
-https://github.com/analogdevicesinc/linux/blob/xcomm_zynq/drivers/iio/frequency/adf5355.c
+SRC: https://github.com/analogdevicesinc/linux/blob/xcomm_zynq/drivers/iio/frequency/adf5355.c
+Licensed under the GPL-2.
 """
 
 
